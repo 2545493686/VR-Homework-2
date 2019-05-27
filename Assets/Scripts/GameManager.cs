@@ -1,39 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
 
-public class GameManager : MonoBehaviour
-{
-    public Plain plain;
+public class GameManager : MonoBehaviour {
 
-    public VRTK_ControllerEvents leftControllerEvents;
-    public VRTK_ControllerEvents rightControllerEvents;
+    public LockToPoint VRTK_Manager;
+    public Animator startAnimator;
+    public Transform startPoint;
 
-    VRTK_ControllerEvents[] controllerEvents;
-
-    void Start()
+    public void StartGame()
     {
-        controllerEvents = new VRTK_ControllerEvents[] { leftControllerEvents, rightControllerEvents };
-        foreach (var item in controllerEvents)
-        { 
-            item.TriggerPressed += (t, e) => 
-            {
-                plain.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                plain.transform.localPosition = Vector3.zero;
-                plain.transform.localRotation = Quaternion.identity;
-                plain.YEuler = 180;
-            }; 
-        }
+        VRTK_Manager.target = startPoint;
+        startAnimator.SetTrigger("Start");
     }
 
-    void Update()
-    {
-
-    }
-
-    public void Log()
-    {
-        Debug.Log("5555555");
-    }
 }
