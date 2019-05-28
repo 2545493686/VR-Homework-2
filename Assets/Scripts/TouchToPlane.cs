@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System;
 using UnityEngine.Events;
+using VRTK;
 
 public class TouchToPlane : MonoBehaviour
 {
@@ -519,16 +520,21 @@ public class TouchToPlane : MonoBehaviour
         newModel.transform.rotation = transform.rotation;
         newModel.transform.localScale = transform.localScale;
 
-        newModel.AddComponent<TouchToPlane>();
+        //newModel.AddComponent<TouchToPlane>();
 
         newModel.AddComponent<Rigidbody>().AddForce(m_ClipPlaneNormal * 2f, ForceMode.VelocityChange);
-
-        newModel.layer = LayerMask.GetMask("Cube");
+        
+        newModel.layer = 8;
 
         transform.GetComponent<Rigidbody>().AddForce(-m_ClipPlaneNormal * 2f, ForceMode.VelocityChange);
         transform.GetComponent<Rigidbody>().useGravity = true;
+        transform.GetComponent<Rigidbody>().constraints = new RigidbodyConstraints();
+
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), 1);
 
         OnClip.Invoke();
+
+        enabled = false;
     }
 
     float GetPointToClipPlaneDis(Vector3 point)
@@ -594,6 +600,15 @@ public class TouchToPlane : MonoBehaviour
     {
         float absX = Mathf.Abs(num1 - num2);
         return absX < 0.00001f;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Destory")
+        {
+            Destroy(gameObject);
+            GameManager.Score--;
+        }
     }
 }
 

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23353723234696278}
   - component: {fileID: 114452667528119286}
   - component: {fileID: 54965202900576496}
+  - component: {fileID: 75802131137529468}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -96,7 +97,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!65 &65482307100140680
 BoxCollider:
@@ -110,6 +111,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!75 &75802131137529468
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912751142350702}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 1}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &114452667528119286
 MonoBehaviour:
   m_ObjectHideFlags: 1

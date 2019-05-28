@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour {
     void Update()
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.up, out hitInfo, 5, m_CubeLayer))
+        if (Physics.Raycast(transform.position, transform.up, out hitInfo, 2, m_CubeLayer))
         {
             if (!m_IsEnterCube)
             {
@@ -32,6 +32,7 @@ public class Sword : MonoBehaviour {
                 m_HitInfo.transform.
                     GetComponent<TouchToPlane>().
                     ClipMesh(m_EnterPoint, m_HitInfo.point);
+                GameManager.Score++;
             }
         }
         else if(m_IsEnterCube)

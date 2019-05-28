@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VRTK;
 
 namespace Plain
@@ -12,10 +13,14 @@ namespace Plain
         public VRTK_ControllerEvents leftControllerEvents;
         public VRTK_ControllerEvents rightControllerEvents;
 
+        
+
         VRTK_ControllerEvents[] controllerEvents;
+
 
         void Start()
         {
+
             controllerEvents = new VRTK_ControllerEvents[] { leftControllerEvents, rightControllerEvents };
             foreach (var item in controllerEvents)
             {
