@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public Animator startAnimator;
     public Transform startPoint;
     public Text scoreText;
+    public CubeSpawn cubeSpawn;
 
     static GameManager m_Instance;
 
@@ -36,6 +37,13 @@ public class GameManager : MonoBehaviour {
     {
         VRTK_Manager.target = startPoint;
         startAnimator.SetTrigger("Start");
+
+        StartCoroutine(StartCubeSpawn());
     }
 
+    IEnumerator StartCubeSpawn()
+    {
+        yield return new WaitForSeconds(2);
+        cubeSpawn.IsProducing = true;
+    }
 }

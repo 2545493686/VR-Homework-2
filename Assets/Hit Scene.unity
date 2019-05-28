@@ -2178,6 +2178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2832c91ef7b21ed4380baf6b83caf4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsProducing: 0
   cubePrefab: {fileID: 114452667528119286, guid: 81a3ace092305db40ac3599794b702b0,
     type: 2}
   spawnTime: 0.3
@@ -2373,6 +2374,7 @@ MonoBehaviour:
   startAnimator: {fileID: 1325259748}
   startPoint: {fileID: 2146932749}
   scoreText: {fileID: 347971172}
+  cubeSpawn: {fileID: 567322570}
 --- !u!1 &655425329
 GameObject:
   m_ObjectHideFlags: 0

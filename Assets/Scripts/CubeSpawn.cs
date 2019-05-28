@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CubeSpawn : MonoBehaviour {
 
+    public bool IsProducing = false;
     public TouchToPlane cubePrefab;
     public float spawnTime = 0.3f;
 
-    bool m_IsProducing = true;
     float m_time = 0;
 
 
     // Update is called once per frame
     void Update () {
 
-        if (m_IsProducing)
+        if (IsProducing)
         {
             if (m_time > spawnTime)
             {
