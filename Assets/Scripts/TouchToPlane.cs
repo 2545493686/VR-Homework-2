@@ -540,7 +540,7 @@ public class TouchToPlane : MonoBehaviour
 
         OnClip.Invoke();
 
-        enabled = false;
+        Destroy(this);
     }
 
     float GetPointToClipPlaneDis(Vector3 point)
