@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public Transform startPoint;
     public Text scoreText;
     public CubeSpawn cubeSpawn;
+    public AudioSource backgroud;
 
     static GameManager m_Instance;
 
@@ -45,5 +46,6 @@ public class GameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         cubeSpawn.IsProducing = true;
+        backgroud.Play();
     }
 }

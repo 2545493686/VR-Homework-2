@@ -7,6 +7,7 @@ using VRTK;
 
 public class TouchToPlane : MonoBehaviour
 {
+    public AudioClip[] audioClips;
     public UnityEvent OnClip;
 
     bool m_IsClearSamePoint = false;
@@ -14,6 +15,11 @@ public class TouchToPlane : MonoBehaviour
 
     Vector3 m_ClipPlaneNormal;
     Vector3 m_ClipPlanePoint;
+
+    void Start()
+    {
+        GetComponent<AudioSource>().clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
+    }
 
     public void ClipMesh(Vector3 beganPos, Vector3 exitPos)
     {

@@ -9814,7 +9814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1518a5e598c7da244bc4850d3ae63354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickOnPointerCollision: 0
+  clickOnPointerCollision: 1
   autoActivateWithinDistance: 0
 --- !u!114 &923134531
 MonoBehaviour:
