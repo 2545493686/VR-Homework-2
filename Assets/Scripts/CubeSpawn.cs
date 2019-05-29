@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CubeSpawn : MonoBehaviour {
 
+    public Material[] materials;
     public bool IsProducing = false;
     public TouchToPlane cubePrefab;
     public float spawnTime = 0.3f;
 
     float m_time = 0;
-
 
     // Update is called once per frame
     void Update () {
@@ -20,6 +20,7 @@ public class CubeSpawn : MonoBehaviour {
             {
                 m_time -= spawnTime;
                 var cube = Instantiate(cubePrefab);
+                cube.GetComponent<MeshRenderer>().material = materials[UnityEngine.Random.Range(0, materials.Length)];
                 cube.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
                 cube.transform.rotation = transform.rotation;
             }

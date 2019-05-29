@@ -11738,6 +11738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c623485639cca6a4fa4e97b80d5c546c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClips: []
   OnClip:
     m_PersistentCalls:
       m_Calls:
@@ -15025,10 +15026,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2832c91ef7b21ed4380baf6b83caf4c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 01e5ad3012b1346f4b6ba72a8c4b4ae5, type: 2}
+  - {fileID: 2100000, guid: 43297462ddab0470dae0b9eb76f9380d, type: 2}
+  - {fileID: 2100000, guid: 2670e6dd69bc54c4e947673d1076820c, type: 2}
+  - {fileID: 2100000, guid: e14813cde03b7403fabcce457b06e4de, type: 2}
+  - {fileID: 2100000, guid: 55ac0808fe8fe48c784a9a38c3e0ad58, type: 2}
+  - {fileID: 2100000, guid: 5d1199652447d4e098f74d481bc3dfe7, type: 2}
+  - {fileID: 2100000, guid: 8433da2e986294cb5a247b8e5133d13d, type: 2}
+  - {fileID: 2100000, guid: 8426fcd9359a3461db87d9bfe21fc7f5, type: 2}
+  - {fileID: 2100000, guid: 6d4802eb6d8e24bdb92090b4559b33bc, type: 2}
+  - {fileID: 2100000, guid: e4e98ace7f16d440d95494d8a286d418, type: 2}
+  - {fileID: 2100000, guid: 1502923cc111b4406834d34ac25784f8, type: 2}
+  - {fileID: 2100000, guid: 0ec3ca7c246ee40f29c004fc3a5bbfc2, type: 2}
+  - {fileID: 2100000, guid: 6eaab8b5ca6864b7f8b7b51387414773, type: 2}
+  - {fileID: 2100000, guid: d4a606ec61f8f421995c9af5109e6e31, type: 2}
+  - {fileID: 2100000, guid: 84f2a9c68cafe4bd1b8da485cf31cb99, type: 2}
+  - {fileID: 2100000, guid: 5760739edce41477caa4901d469744c2, type: 2}
+  - {fileID: 2100000, guid: 9ee5cbdb08bb646cc9a6babf55a93567, type: 2}
+  - {fileID: 2100000, guid: 213e010d3ccca4a329b4e292e8aa02d0, type: 2}
+  - {fileID: 2100000, guid: 8f954811133dd4ddc87236485920d07a, type: 2}
+  - {fileID: 2100000, guid: 0f2d250fc28844b4d95fb9e93dd91cdf, type: 2}
+  - {fileID: 2100000, guid: 32428af0e11414cc88d7be0c6ee1021a, type: 2}
+  - {fileID: 2100000, guid: 7d185cee10dcc4df08030a21a4acbc66, type: 2}
+  - {fileID: 2100000, guid: 4636ba4ac4132470fa3f6b4bf3fa0bec, type: 2}
+  - {fileID: 2100000, guid: ed264d14ddbcd460ab4798dbc739b74f, type: 2}
+  - {fileID: 2100000, guid: 370219178bc5a42e1a08ab08dcccf81d, type: 2}
+  - {fileID: 2100000, guid: 453b70929adca468fa9edc4dcc7a1b25, type: 2}
+  - {fileID: 2100000, guid: 1b629140b21114310b0fe27f4853c367, type: 2}
+  - {fileID: 2100000, guid: b62d5aed12c3f4a638bcf0c4d368767b, type: 2}
+  - {fileID: 2100000, guid: b3b88aea356034030b8474fa5f461034, type: 2}
+  - {fileID: 2100000, guid: d32aa4b96c46b4053a681da67b08561c, type: 2}
+  - {fileID: 2100000, guid: 5747cec959eaa471fa0337d2ec10d4c6, type: 2}
+  - {fileID: 2100000, guid: d8605d799c6c04e939f3200368937451, type: 2}
+  - {fileID: 2100000, guid: 09ce0b23fa06f4e578e120cf35064702, type: 2}
+  - {fileID: 2100000, guid: c3004464070ff42329f458faa9473d50, type: 2}
+  - {fileID: 2100000, guid: f3d36fd54e1b741abbbab65218b223b8, type: 2}
+  - {fileID: 2100000, guid: ed53901cfc61f4bba8b0edc6bac57058, type: 2}
+  - {fileID: 2100000, guid: 0d6194572bd454b6697252d7f626ce94, type: 2}
+  - {fileID: 2100000, guid: 930a093926c514acaa60a7a968239f6f, type: 2}
+  - {fileID: 2100000, guid: b651af09408884a1d9edd1a91c9782ca, type: 2}
+  - {fileID: 2100000, guid: ed53901cfc61f4bba8b0edc6bac57058, type: 2}
+  - {fileID: 2100000, guid: 930a093926c514acaa60a7a968239f6f, type: 2}
+  - {fileID: 2100000, guid: fe53161fefb2a4718b3c03c4bda2b4fd, type: 2}
+  - {fileID: 2100000, guid: 56e5dfe44b5084c79a8db3ddd8f6f894, type: 2}
+  - {fileID: 2100000, guid: 2e34c128d49e8452ba9a6ee86d8fdb05, type: 2}
+  - {fileID: 2100000, guid: 734784db264dd4b039953c4b1f5805c8, type: 2}
+  - {fileID: 2100000, guid: 589916a48a7df457bb6224032573e248, type: 2}
+  - {fileID: 2100000, guid: 32421aac27e8742da9f9cb32330b420c, type: 2}
   IsProducing: 0
   cubePrefab: {fileID: 114452667528119286, guid: 81a3ace092305db40ac3599794b702b0,
     type: 2}
-  spawnTime: 0.3
+  spawnTime: 0.5
 --- !u!1 &570564321
 GameObject:
   m_ObjectHideFlags: 0
@@ -23990,7 +24039,7 @@ GameObject:
   - component: {fileID: 954040320}
   - component: {fileID: 954040318}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Destory Cube
   m_TagString: Destory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
