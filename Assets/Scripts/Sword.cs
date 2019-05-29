@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour {
     void Update()
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.up, out hitInfo, 2, m_CubeLayer))
+        if (Physics.Raycast(transform.position, transform.up, out hitInfo, 1.5f, m_CubeLayer))
         {
             if (!m_IsEnterCube)
             {
@@ -27,7 +27,7 @@ public class Sword : MonoBehaviour {
             }
             m_HitInfo = hitInfo;
 
-            if ((hitInfo.point - m_EnterPoint).magnitude > GetHitLossyScale(hitInfo))
+            if ((hitInfo.point - m_EnterPoint).magnitude > GetHitLossyScale(hitInfo) * 1.5f)
             {
                 m_HitInfo.transform.
                     GetComponent<TouchToPlane>().
