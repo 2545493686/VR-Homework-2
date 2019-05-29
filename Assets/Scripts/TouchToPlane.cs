@@ -18,7 +18,7 @@ public class TouchToPlane : MonoBehaviour
 
     void Start()
     {
-        GetComponent<AudioSource>().clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
+        GetComponent<AudioSource>().clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length - 1)];
     }
 
     public void ClipMesh(Vector3 beganPos, Vector3 exitPos)
