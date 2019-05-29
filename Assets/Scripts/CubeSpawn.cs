@@ -11,6 +11,8 @@ public class CubeSpawn : MonoBehaviour {
 
     float m_time = 0;
 
+    Vector3 lastPoint;
+
     // Update is called once per frame
     void Update () {
 
@@ -21,7 +23,13 @@ public class CubeSpawn : MonoBehaviour {
                 m_time -= spawnTime;
                 var cube = Instantiate(cubePrefab);
                 cube.GetComponent<MeshRenderer>().material = materials[UnityEngine.Random.Range(0, materials.Length)];
-                cube.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
+                var random = (Vector3)Random.insideUnitCircle;
+                while ((lastPoint - random).magnitude < 0.3f)
+                {
+                    random = (Vector3)Random.insideUnitCircle;
+                }
+                lastPoint = random;
+                cube.transform.position = transform.position + random;
                 cube.transform.rotation = transform.rotation;
             }
             else
