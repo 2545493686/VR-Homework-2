@@ -18,7 +18,9 @@ public class Sword : MonoBehaviour {
     void Update()
     {
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.up, out hitInfo, 1.5f, m_CubeLayer))
+        //GetComponent<LineRenderer>().SetPosition(0, transform.position);
+        //GetComponent<LineRenderer>().SetPosition(1, transform.position + transform.forward * 1f);
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 1f, m_CubeLayer))
         {
             if (!m_IsEnterCube)
             {
@@ -30,7 +32,7 @@ public class Sword : MonoBehaviour {
             if ((hitInfo.point - m_EnterPoint).magnitude > GetHitLossyScale(hitInfo) * 1.5f)
             {
                 m_HitInfo.transform.
-                    GetComponent<TouchToPlane>().
+                    GetComponent<Cube>().
                     ClipMesh(m_EnterPoint, m_HitInfo.point);
                 GameManager.Score++;
             }

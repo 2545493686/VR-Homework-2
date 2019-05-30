@@ -6,12 +6,29 @@ public class CubeSpawn : MonoBehaviour {
 
     public Material[] materials;
     public bool IsProducing = false;
-    public TouchToPlane cubePrefab;
+    public Cube cubePrefab;
     public float spawnTime = 0.3f;
 
+    List<Cube> cubes;
+    Vector3 lastPoint;
     float m_time = 0;
 
-    Vector3 lastPoint;
+    void Awake()
+    {
+        cubes = new List<Cube>();
+    }
+    
+    public void ClearAllCube()
+    {
+        foreach (var item in cubes)
+        {
+            if (item)
+            {
+                Destroy(item.gameObject);
+            }
+        }
+        cubes.Clear();
+    }
 
     // Update is called once per frame
     void Update () {
@@ -21,16 +38,15 @@ public class CubeSpawn : MonoBehaviour {
             if (m_time > spawnTime)
             {
                 m_time -= spawnTime;
+
                 var cube = Instantiate(cubePrefab);
-                cube.GetComponent<MeshRenderer>().material = materials[UnityEngine.Random.Range(0, materials.Length)];
-                var random = (Vector3)Random.insideUnitCircle;
-                while ((lastPoint - random).magnitude < 0.3f)
-                {
-                    random = (Vector3)Random.insideUnitCircle;
-                }
-                lastPoint = random;
-                cube.transform.position = transform.position + random;
-                cube.transform.rotation = transform.rotation;
+
+                cube.GetComponent<MeshRenderer>().material = GetRandomMaterials();
+
+                SetCubePosition(cube);
+                SetCubeRotation(cube);
+
+                cubes.Add(cube);
             }
             else
             {
@@ -39,4 +55,26 @@ public class CubeSpawn : MonoBehaviour {
         }
 
 	}
+
+    private void SetCubeRotation(Cube cube)
+    {
+        cube.transform.rotation = transform.rotation;
+    }
+
+    private void SetCubePosition(Cube cube)
+    {
+        var random = (Vector3)Random.insideUnitCircle;
+        while ((lastPoint - random).magnitude < 0.3f)
+        {
+            random = (Vector3)Random.insideUnitCircle;
+        }
+        lastPoint = random;
+
+        cube.transform.position = transform.position + random;
+    }
+
+    private Material GetRandomMaterials()
+    {
+        return materials[UnityEngine.Random.Range(0, materials.Length)];
+    }
 }

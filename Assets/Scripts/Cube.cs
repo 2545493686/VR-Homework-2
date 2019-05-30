@@ -5,7 +5,7 @@ using System;
 using UnityEngine.Events;
 using VRTK;
 
-public class TouchToPlane : MonoBehaviour
+public class Cube : MonoBehaviour
 {
     public AudioClip[] audioClips;
     public UnityEvent OnClip;
@@ -18,7 +18,7 @@ public class TouchToPlane : MonoBehaviour
 
     void Start()
     {
-        GetComponent<AudioSource>().clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length - 1)];
+        GetComponent<AudioSource>().clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
     }
 
     public void ClipMesh(Vector3 beganPos, Vector3 exitPos)
@@ -359,7 +359,6 @@ public class TouchToPlane : MonoBehaviour
                         float newUV_x = (uv2.x - uv0.x) * k02 + uv0.x;
                         float newUV_y = (uv2.y - uv0.y) * k02 + uv0.y;
                         uvList.Add(new Vector2(newUV_x, newUV_y));
-                        Debug.Log("纹理坐标" + uvList[uvList.Count - 1]);
                     }
                     //法向量
                     Vector3 normalX0 = normalList[trianglePointIndex0];
@@ -529,8 +528,9 @@ public class TouchToPlane : MonoBehaviour
         //newModel.AddComponent<TouchToPlane>();
 
         newModel.AddComponent<Rigidbody>().AddForce(m_ClipPlaneNormal * 2f, ForceMode.VelocityChange);
-        
-        newModel.layer = 8;
+
+        //newModel.layer = 8;
+        gameObject.layer = 0;
 
         transform.GetComponent<Rigidbody>().AddForce(-m_ClipPlaneNormal * 2f, ForceMode.VelocityChange);
         transform.GetComponent<Rigidbody>().useGravity = true;
@@ -539,6 +539,9 @@ public class TouchToPlane : MonoBehaviour
         VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), 1);
 
         OnClip.Invoke();
+
+        Destroy(gameObject, 5);
+        Destroy(newModel, 5);
 
         Destroy(this);
     }
